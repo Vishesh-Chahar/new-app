@@ -1,8 +1,122 @@
+/* Import Tailwind layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* --------------------------
+   1. Base styles
+   -------------------------- */
+:root {
+  --bg-color: #000;
+  --text-color: #fff;
+  --accent-color: #a855f7;
+  /* purple-500 */
+  --accent-color-2: #06b6d4;
+  /* cyan-400 */
+}
+
+html,
 body {
-  @apply bg-black text-white overflow-x-hidden;
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* --------------------------
+   2. Text rendering & layout
+   -------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-color-2);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------
+   3. Focus outlines for keyboard users
+   -------------------------- */
+.user-is-tabbing :focus {
+  outline: 2px solid var(--accent-color-2);
+  outline-offset: 3px;
+}
+
+/* --------------------------
+   4. Smooth fade-in animation on load
+   -------------------------- */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeIn 1s ease-out both;
+}
+
+/* --------------------------
+   5. Optional custom cursor fallback
+   -------------------------- */
+body:not(.has-custom-cursor) {
+  cursor: crosshair;
+}
+
+/* --------------------------
+   6. Tailwind helpers (custom classes)
+   -------------------------- */
+
+/* Glow text effect */
+.text-glow {
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6), 0 0 20px rgba(6, 182, 212, 0.5);
+}
+
+/* Gradient border utility */
+.gradient-border {
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, var(--accent-color), var(--accent-color-2)) 1;
+}
+
+/* Gradient background for buttons or cards */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-color-2));
+}
+
+/* For hidden accessibility elements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
