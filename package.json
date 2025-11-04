@@ -1,5 +1,6 @@
 {
   "name": "xtract-clone",
+  "type": "module",
   "version": "1.0.0",
   "private": true,
   "homepage": "https://vishesh-chahar.github.io/new-app/",
