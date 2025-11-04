@@ -2,7 +2,7 @@
   "name": "xtract-clone",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://your-username.github.io/your-repo-name",
+  "homepage": "https://vishesh-chahar.github.io/new-app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
